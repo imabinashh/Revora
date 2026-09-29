@@ -1,0 +1,20 @@
+{
+  "name": "revora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "omggif": "^1.0.10",
+    "pngjs": "^7.0.0",
+    "vite": "^8.3.1"
+  }
+}

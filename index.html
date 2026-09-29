@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REVORA — Automotive Care, Refined</title>
+  <meta name="description" content="REVORA connects discerning car owners with vetted automotive detailing and service specialists. Discover, compare, and schedule premium car care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- 01. SLICK & MINIMAL GLOBAL NAVIGATION                                    -->
+  <!-- ========================================================================= -->
+  <header class="navbar-wrapper" id="navbar">
+    <nav class="navbar-slick">
+      <a href="#hero" class="nav-brand-slick" aria-label="REVORA Home">
+        <span class="brand-name-slick">REVORA</span>
+      </a>
+
+      <div class="nav-links-slick">
+        <a href="#services" class="nav-link-slick">SERVICES</a>
+        <a href="#service-centers" class="nav-link-slick">SPECIALISTS</a>
+        <a href="#story-exhibition" class="nav-link-slick">EXPERIENCE</a>
+        <a href="#packages" class="nav-link-slick">PACKAGES</a>
+        <a href="#my-garage" class="nav-link-slick">GARAGE</a>
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="nav-link-slick nav-link-social">/X</a>
+      </div>
+
+      <button class="mobile-toggle-slick" id="mobileMenuBtn" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========================================================================= -->
+    <!-- 02. HERO SECTION (FLORIA EDITORIAL LAYOUT + CURSOR SPOTLIGHT REVEAL)      -->
+    <!-- ========================================================================= -->
+    <section class="hero-section" id="hero">
+      
+      <!-- Base Background Image Layer (Always visible underneath) -->
+      <div class="hero-media hero-media-base">
+        <img src="Assets/Base-Image.png?v=2" alt="REVORA Vehicle Baseline State" class="hero-img" id="heroBaseImg" fetchpriority="high">
+      </div>
+
+      <!-- Character Reveal Image Layer (Only revealed through cursor spotlight) -->
+      <div class="hero-media hero-reveal-layer" id="heroRevealLayer" aria-hidden="true">
+        <img src="Assets/Reveal-Image.png?v=2" alt="REVORA Vehicle Refined State" class="hero-img" id="heroRevealImg" fetchpriority="high">
+        <!-- Glowing aura ring following the cursor spotlight perimeter -->
+        <div class="spotlight-glow-ring" id="spotlightGlowRing"></div>
+      </div>
+
+      <!-- Dark Ambient Vignette / Blue & Orange Atmospheric overlays -->
+      <div class="hero-atmosphere"></div>
+
+      <!-- Hero Main Content (Rearranged exactly as Reference Image) -->
+      <div class="hero-container-floria">
+        
+        <!-- Center/Top Hero Group: Subheading directly above Giant Headline -->
+        <div class="hero-main-group">
+          <div class="hero-eyebrow-floria">
+            <span class="hero-eyebrow-dot"></span>
+            <span>AUTOMOTIVE CARE, REFINED</span>
+          </div>
+
+          <h1 class="hero-title-floria">
+            <span>DRIVEN</span>
+            <span>BY</span>
+            <span>DETAIL.</span>
+          </h1>
+        </div>
+
+        <!-- Bottom Horizontal Bar: Description on Left, Action Buttons on Right -->
+        <div class="hero-bottom-bar-floria">
+          
+          <div class="hero-bottom-left">
+            <div class="hero-corner-insignia" title="REVORA Signature">
+              <span>R</span>
+            </div>
+            <p class="hero-bottom-desc">
+              Discover, compare, and schedule premium automotive services from trusted specialists.
+            </p>
+          </div>
+
+          <div class="hero-bottom-right">
+            <a href="#services" class="hero-action-btn">
+              <span>Explore Services</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#service-centers" class="hero-action-btn">
+              <span>Find a Specialist</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 02. SCROLL-DRIVEN CINEMATIC EXHIBITION STORY (SAKURA HORIZON // SCENE 02) -->
+    <!-- ========================================================================= -->
+    <section class="story-scroll-section" id="story-exhibition" aria-label="Digital Art Exhibition: The Blossom Path">
+      <div class="story-sticky-viewport" id="storyStickyViewport">
+        
+        <!-- Center Expanding Image Frame (9:16 portrait ratio expanding to 100vw x 100vh) -->
+        <div class="story-center-stage">
+          <div class="story-portrait-frame" id="storyPortraitFrame">
+            <img src="Assets/story-supra-4k.jpg" alt="Toyota Supra MK4 with mirror lake reflection surrounded by cherry blossoms and alpine mountains" class="story-hero-image" id="storyHeroImage" decoding="sync" fetchpriority="high">
+            <div class="story-frame-ambient-glow" id="storyFrameGlow"></div>
+          </div>
+        </div>
+
+        <!-- Asymmetric Editorial UI Elements ("Organized Chaos") -->
+        <div class="story-editorial-canvas" id="storyEditorialCanvas">
+          
+          <!-- Top Center: Creator Capsule -->
+          <div class="story-elem story-badge-top" data-fade-start="0.10" data-fade-end="0.55" data-drift-y="-40" data-drift-x="0" data-drift-rot="0">
+            <span class="story-capsule-tag">Designed with <svg viewBox="0 0 24 24" width="13" height="13" fill="#FFFFFF" class="white-heart-icon" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Abinash</span>
+          </div>
+
+          <!-- Top Left: Combined Section 3 Manifesto & Title -->
+          <div class="story-elem story-elem-top-left" data-fade-start="0.12" data-fade-end="0.58" data-drift-y="-50" data-drift-x="-50" data-drift-rot="-3">
+            <div class="story-eyebrow-pink">
+              <span class="story-dot-pink"></span>
+              <span>THE REVORA APPROACH</span>
+            </div>
+            <h2 class="story-headline-title">Car care should feel as considered as the car itself.</h2>
+            <p class="story-headline-desc">
+              From routine precision maintenance to microscopic paint correction and self-healing protective films, REVORA re-engineers automotive preservation into a seamless digital journey.
+            </p>
+          </div>
+
+          <!-- Top Right: Standards Pill Tag (Rotated) -->
+          <div class="story-elem story-elem-top-right" data-fade-start="0.10" data-fade-end="0.52" data-drift-y="-45" data-drift-x="50" data-drift-rot="8">
+            <div class="story-specimen-pill">
+              <span class="specimen-id">STANDARDS</span>
+              <span class="specimen-sep">•</span>
+              <span class="specimen-title">Gyeon & 3M Certified Specialists Only</span>
+            </div>
+          </div>
+
+          <!-- Mid Left: Coordinates & Tolerance Metric -->
+          <div class="story-elem story-elem-mid-left" data-fade-start="0.08" data-fade-end="0.48" data-drift-y="0" data-drift-x="-70" data-drift-rot="0">
+            <div class="story-coord-strip">PRECISION SPEC // ISO-9001</div>
+            <div class="story-elevation-group">
+              <div class="story-elevation-val">&lt; 0.1μm</div>
+              <div class="story-elevation-label">TOLERANCE • SUB-MICRON PAINT DEPTH MEASUREMENT</div>
+            </div>
+          </div>
+
+          <!-- Mid Right: Craftsmanship Guarantee Glass Card (Tilted) -->
+          <div class="story-elem story-elem-mid-right" data-fade-start="0.08" data-fade-end="0.50" data-drift-y="30" data-drift-x="70" data-drift-rot="-6">
+            <div class="story-glass-card">
+              <div class="obs-card-header">
+                <span class="obs-card-tag">CRAFTSMANSHIP GUARANTEE</span>
+              </div>
+              <blockquote class="obs-card-quote">
+                “We eliminate guesswork with certified specialists, transparent flat rates, and uncompromised multi-stage paint protection.”
+              </blockquote>
+              <div class="obs-card-footer">
+                <span class="obs-vol">WARRANTY</span>
+                <span class="obs-brand">UP TO 7 YEARS CERAMIC & PPF</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Left: Verified Network Note -->
+          <div class="story-elem story-elem-bottom-left" data-fade-start="0.06" data-fade-end="0.38" data-drift-y="50" data-drift-x="-40" data-drift-rot="-2">
+            <div class="story-materiality-tag">
+              <span class="mat-label">VERIFIED NETWORK</span>
+              <span class="mat-pct">100% Insured</span>
+            </div>
+            <p class="story-materiality-desc">
+              Every specialist undergoes dust-free cleanroom audits, surface science certifications, and continuous quality monitoring.
+            </p>
+          </div>
+
+          <!-- Bottom Center: Scroll Prompt Indicator -->
+          <div class="story-elem story-elem-bottom-center" data-fade-start="0.02" data-fade-end="0.22" data-drift-y="30" data-drift-x="0" data-drift-rot="0">
+            <span class="story-scroll-prompt">SCROLL TO EXPLORE THE APPROACH</span>
+            <div class="story-scroll-pill-icon">
+              <span class="scroll-dot"></span>
+            </div>
+          </div>
+
+          <!-- Bottom Right: Chapter Title -->
+          <div class="story-elem story-elem-bottom-right" data-fade-start="0.06" data-fade-end="0.40" data-drift-y="50" data-drift-x="50" data-drift-rot="2">
+            <div class="story-chapter-eyebrow">PRESERVATION RE-ENGINEERED</div>
+            <div class="story-chapter-name">Flawless Reflection</div>
+            <div class="story-chapter-sub">Self-Healing Films & Ceramic Protection</div>
+          </div>
+
+          <!-- Bottom Left Monogram -->
+          <div class="story-elem story-elem-monogram" data-fade-start="0.04" data-fade-end="0.30" data-drift-y="20" data-drift-x="-20" data-drift-rot="0">
+            <div class="story-monogram-circle" title="REVORA">
+              <span>R</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 03. BOOKING SEARCH BAR (SKELETON)                                        -->
+    <!-- ========================================================================= -->
+    <section class="section booking-bar-section" id="booking-search">
+      <div class="section-container">
+        <div class="section-status-badge">
+          <span class="badge-dot"></span>
+          <span>SECTION 02 • SKELETON</span>
+        </div>
+        <div class="booking-search-card">
+          <div class="booking-field">
+            <label class="field-label">SERVICE</label>
+            <div class="field-input-box">
+              <span class="field-value">Ceramic Coating & Paint Correction</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <div class="booking-field-divider"></div>
+
+          <div class="booking-field">
+            <label class="field-label">VEHICLE</label>
+            <div class="field-input-box">
+              <span class="field-value">Porsche 911 GT3 (992)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <div class="booking-field-divider"></div>
+
+          <div class="booking-field">
+            <label class="field-label">LOCATION</label>
+            <div class="field-input-box">
+              <span class="field-value">Mumbai • Bandra West</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <div class="booking-field-divider"></div>
+
+          <div class="booking-field">
+            <label class="field-label">DATE</label>
+            <div class="field-input-box">
+              <span class="field-value">Tomorrow, 10:00 AM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+
+          <button class="btn btn-primary booking-submit-btn">
+            <span>Find Specialists</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 03. SERVICE CATEGORIES (SKELETON)                                        -->
+    <!-- ========================================================================= -->
+    <section class="section services-section" id="services">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 03 • SERVICES</span>
+          </div>
+          <h2 class="section-title">Everything Your Car Needs.</h2>
+          <p class="section-subtitle">From routine workshop maintenance to obsessively detailed paint correction.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card" data-service="maintenance">
+            <div class="service-media-wrap">
+              <img src="Assets/service-maintenance.jpg" alt="Service & Maintenance" class="service-media-img" loading="lazy">
+              <div class="service-media-gradient"></div>
+              <div class="service-media-tags">
+                <span class="service-code">SVC-01</span>
+                <span class="service-tag">MECHANICAL</span>
+              </div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Service & Maintenance</h3>
+              <p class="service-card-desc">Scheduled periodic maintenance, engine fluid replacements, brake rotors, and comprehensive multi-point diagnostics.</p>
+              <div class="service-items-tags">
+                <span>Oil & Filter</span>
+                <span>Brake Systems</span>
+                <span>AC Service</span>
+                <span>Alignment</span>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-cta-link">Explore Maintenance →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card featured" data-service="detailing">
+            <div class="service-media-wrap">
+              <img src="Assets/service-detailing.jpg" alt="Premium Detailing" class="service-media-img" loading="lazy">
+              <div class="service-media-gradient"></div>
+              <div class="service-media-tags">
+                <span class="service-code">SVC-02</span>
+                <span class="service-tag highlight">SIGNATURE</span>
+              </div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Premium Detailing</h3>
+              <p class="service-card-desc">Showroom finish restoration via multi-stage machine polishing, swirl removal, and exterior paint decontamination.</p>
+              <div class="service-items-tags">
+                <span>Foam Wash</span>
+                <span>Clay Decon</span>
+                <span>Stage 2 Polish</span>
+                <span>Wheel Off</span>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-cta-link">Explore Detailing →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-service="diagnostics">
+            <div class="service-media-wrap">
+              <img src="Assets/service-diagnostics.jpg" alt="Diagnostics & ECU" class="service-media-img" loading="lazy">
+              <div class="service-media-gradient"></div>
+              <div class="service-media-tags">
+                <span class="service-code">SVC-03</span>
+                <span class="service-tag">ENGINEERING</span>
+              </div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Diagnostics & ECU</h3>
+              <p class="service-card-desc">Deep electronic module scanning, engine telemetry inspection, live fault-code decoding, and sensor health verification.</p>
+              <div class="service-items-tags">
+                <span>ECU Scan</span>
+                <span>Live Telemetry</span>
+                <span>Battery Health</span>
+                <span>Pre-Purchase</span>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-cta-link">Explore Diagnostics →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-service="protection">
+            <div class="service-media-wrap">
+              <img src="Assets/service-protection.jpg" alt="Surface Protection" class="service-media-img" loading="lazy">
+              <div class="service-media-gradient"></div>
+              <div class="service-media-tags">
+                <span class="service-code">SVC-04</span>
+                <span class="service-tag highlight">CERAMIC & PPF</span>
+              </div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Surface Protection</h3>
+              <p class="service-card-desc">Hydrophobic 9H/10H ceramic shield coatings and self-healing Paint Protection Film (PPF) guarding against stone chips.</p>
+              <div class="service-items-tags">
+                <span>10H Ceramic</span>
+                <span>Self-Healing PPF</span>
+                <span>Glass Coating</span>
+                <span>Interior Shield</span>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-cta-link">Explore Protection →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="service-card" data-service="interior">
+            <div class="service-media-wrap">
+              <img src="Assets/service-interior.jpg" alt="Interior Restoration" class="service-media-img" loading="lazy">
+              <div class="service-media-gradient"></div>
+              <div class="service-media-tags">
+                <span class="service-code">SVC-05</span>
+                <span class="service-tag">CABIN CARE</span>
+              </div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Interior Restoration</h3>
+              <p class="service-card-desc">Deep hot-water carpet extraction, Alcantara conditioning, matte leather restoration, and ozone antimicrobial sanitization.</p>
+              <div class="service-items-tags">
+                <span>Leather Nourish</span>
+                <span>Alcantara Clean</span>
+                <span>Ozone Treatment</span>
+                <span>Steam Disinfect</span>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-cta-link">Explore Interior Care →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="service-card" data-service="inspection">
+            <div class="service-media-wrap">
+              <img src="Assets/service-inspection.jpg" alt="Pre-Purchase Inspection" class="service-media-img" loading="lazy">
+              <div class="service-media-gradient"></div>
+              <div class="service-media-tags">
+                <span class="service-code">SVC-06</span>
+                <span class="service-tag">ASSURANCE</span>
+              </div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Pre-Purchase Inspection</h3>
+              <p class="service-card-desc">180-point meticulous structural, cosmetic, mechanical, and accident assessment before you sign for a pre-owned vehicle.</p>
+              <div class="service-items-tags">
+                <span>Paint Gauge Check</span>
+                <span>Undercarriage</span>
+                <span>Road Test</span>
+                <span>Digital Dossier</span>
+              </div>
+              <div class="service-card-footer">
+                <span class="service-cta-link">Book Inspection →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 06. SCROLL STORY SECTION (SKELETON)                                      -->
+    <!-- ========================================================================= -->
+    <section class="section scroll-story-section" id="scroll-story">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 05 • SKELETON</span>
+          </div>
+          <span class="eyebrow-accent">THE REVORA EXPERIENCE</span>
+          <h2 class="section-title">From First Look to Final Detail.</h2>
+          <p class="section-subtitle">A cinematic 5-stage transformation that sets the benchmark in automotive refinement.</p>
+        </div>
+
+        <div class="story-stages-grid">
+          <div class="story-stage-card">
+            <div class="stage-num">01</div>
+            <h4 class="stage-title">Inspect</h4>
+            <p class="stage-text">Sub-micron digital paint depth measurement and UV inspection to map imperfections.</p>
+          </div>
+          <div class="story-stage-card">
+            <div class="stage-num">02</div>
+            <h4 class="stage-title">Prepare</h4>
+            <p class="stage-text">pH-neutral citrus foam wash, ferrous fallout chemical dissolve, and clay bar extraction.</p>
+          </div>
+          <div class="story-stage-card">
+            <div class="stage-num">03</div>
+            <h4 class="stage-title">Refine</h4>
+            <p class="stage-text">Rotary and dual-action precision compounding removing 95%+ of surface swirls and scratches.</p>
+          </div>
+          <div class="story-stage-card">
+            <div class="stage-num">04</div>
+            <h4 class="stage-title">Protect</h4>
+            <p class="stage-text">Application of multi-layer ceramic glass coat or self-healing TPU protective armor.</p>
+          </div>
+          <div class="story-stage-card highlight">
+            <div class="stage-num">05</div>
+            <h4 class="stage-title">Reveal</h4>
+            <p class="stage-text">Final studio light handover under spectrum-balanced 5500K inspection lamps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 07. FEATURED PACKAGES & PRICING (SKELETON)                               -->
+    <!-- ========================================================================= -->
+    <section class="section packages-section" id="packages">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 06 • SKELETON</span>
+          </div>
+          <h2 class="section-title">Choose Your Level of Care.</h2>
+          <p class="section-subtitle">Transparent packages tailored for daily commuters and concourse showstoppers.</p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Essential -->
+          <div class="package-card">
+            <div class="package-header">
+              <span class="package-tier">ESSENTIAL</span>
+              <div class="package-price">₹1,499 <span class="price-cycle">/ session</span></div>
+              <p class="package-summary">Thorough sanitization and wash for routine upkeep.</p>
+            </div>
+            <ul class="package-features">
+              <li>High-pressure decontamination wash</li>
+              <li>Interior vacuum & trunk cleanup</li>
+              <li>Dashboard UV dressing</li>
+              <li>Tyre gloss dressing</li>
+              <li>25-point visual safety check</li>
+            </ul>
+            <button class="btn btn-secondary btn-block">Choose Essential</button>
+          </div>
+
+          <!-- Signature -->
+          <div class="package-card featured">
+            <div class="featured-ribbon">MOST POPULAR</div>
+            <div class="package-header">
+              <span class="package-tier highlight">SIGNATURE</span>
+              <div class="package-price">₹3,999 <span class="price-cycle">/ session</span></div>
+              <p class="package-summary">Deep gloss enhancement and cabin restoration.</p>
+            </div>
+            <ul class="package-features">
+              <li>Everything in Essential</li>
+              <li>Single-stage machine gloss polish</li>
+              <li>Clay bar paint decontamination</li>
+              <li>Full interior leather & fabric deep clean</li>
+              <li>Rim face iron-fallout dissolve</li>
+              <li>6-month sealant coating</li>
+            </ul>
+            <button class="btn btn-primary btn-block">Choose Signature</button>
+          </div>
+
+          <!-- Ultimate -->
+          <div class="package-card">
+            <div class="package-header">
+              <span class="package-tier">ULTIMATE</span>
+              <div class="package-price">₹9,999 <span class="price-cycle">/ session</span></div>
+              <p class="package-summary">Complete concourse paint correction & ceramic shield.</p>
+            </div>
+            <ul class="package-features">
+              <li>Everything in Signature</li>
+              <li>Multi-stage precision swirl removal</li>
+              <li>3-Year 9H Ceramic Coating applied</li>
+              <li>Engine bay steam detailing & dressing</li>
+              <li>Hydrophobic glass treatment</li>
+              <li>Leather ceramic protective coat</li>
+            </ul>
+            <button class="btn btn-secondary btn-block">Choose Ultimate</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 08. SERVICE CENTERS DIRECTORY (SKELETON)                                  -->
+    <!-- ========================================================================= -->
+    <section class="section centers-section" id="service-centers">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 07 • SKELETON</span>
+          </div>
+          <h2 class="section-title">Certified Service Centers.</h2>
+          <p class="section-subtitle">Vetted partner facilities equipped with temperature-controlled detailing bays.</p>
+        </div>
+
+        <div class="centers-grid">
+          <div class="center-card">
+            <div class="center-media-wrap">
+              <img src="Assets/center-atelier.jpg" alt="REVORA Atelier • Bandra West" class="center-media-img" loading="lazy">
+              <div class="center-media-gradient"></div>
+              <div class="center-badge-floating">PREMIUM STUDIO</div>
+            </div>
+            <div class="center-card-body">
+              <h4 class="center-name">REVORA Atelier • Bandra West</h4>
+              <p class="center-address">Plot 42, Linking Road, Bandra West, Mumbai 400050</p>
+              <div class="center-meta">
+                <span>★ 4.9 (480 reviews)</span>
+                <span>• 3.2 km away</span>
+                <span class="status-open">Open Now</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="center-card">
+            <div class="center-media-wrap">
+              <img src="Assets/center-works.jpg" alt="REVORA Works • Worli Seaface" class="center-media-img" loading="lazy">
+              <div class="center-media-gradient"></div>
+              <div class="center-badge-floating">SPECIALIST LAB</div>
+            </div>
+            <div class="center-card-body">
+              <h4 class="center-name">REVORA Works • Worli Seaface</h4>
+              <p class="center-address">Unit 7, Apex Industrial Estate, Worli, Mumbai 400018</p>
+              <div class="center-meta">
+                <span>★ 4.9 (620 reviews)</span>
+                <span>• 8.5 km away</span>
+                <span class="status-open">Open Now</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="center-card">
+            <div class="center-media-wrap">
+              <img src="Assets/center-hub.jpg" alt="REVORA Hub • Andheri East" class="center-media-img" loading="lazy">
+              <div class="center-media-gradient"></div>
+              <div class="center-badge-floating">EXPRESS HUB</div>
+            </div>
+            <div class="center-card-body">
+              <h4 class="center-name">REVORA Hub • Andheri East</h4>
+              <p class="center-address">MIDC Central Road, Andheri East, Mumbai 400093</p>
+              <div class="center-meta">
+                <span>★ 4.8 (310 reviews)</span>
+                <span>• 11.0 km away</span>
+                <span class="status-open">Open Now</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 09. MOBILE DETAILING ("WE COME TO YOU") (SKELETON)                       -->
+    <!-- ========================================================================= -->
+    <section class="section mobile-detailing-section" id="mobile-detailing">
+      <div class="section-container">
+        <div class="section-status-badge">
+          <span class="badge-dot"></span>
+          <span>SECTION 08 • SKELETON</span>
+        </div>
+        <div class="mobile-box">
+          <div class="mobile-box-content">
+            <span class="eyebrow-accent">MOBILE DETAILING UNIT</span>
+            <h2 class="mobile-heading">Concourse Detailing. Directly in Your Driveway.</h2>
+            <p class="mobile-desc">
+              Can't visit our studio? Our customized Mercedes Sprinter units are self-powered with deionized water tanks, onboard silent generators, and master technicians.
+            </p>
+            <div class="mobile-features">
+              <div class="m-feat">✓ Zero power or water required from client</div>
+              <div class="m-feat">✓ 100% scratch-free reverse osmosis wash</div>
+              <div class="m-feat">✓ On-site paint correction & ceramic maintenance</div>
+            </div>
+            <button class="btn btn-primary">Book Doorstep Detailing</button>
+          </div>
+          <div class="mobile-box-media">
+            <img src="Assets/mobile-detailing-van.jpg" alt="REVORA Mobile Detailing Sprinter Unit on-site" class="mobile-media-img" loading="lazy">
+            <div class="mobile-media-overlay"></div>
+            <div class="mobile-media-badge">
+              <span class="m-badge-title">AUTONOMOUS FLEET RIG</span>
+              <span class="m-badge-sub">400L DI WATER • ONBOARD SILENT POWER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 10. MY GARAGE PREVIEW (SKELETON)                                         -->
+    <!-- ========================================================================= -->
+    <section class="section garage-section" id="my-garage">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 09 • SKELETON</span>
+          </div>
+          <h2 class="section-title">My Garage.</h2>
+          <p class="section-subtitle">Save your vehicles, track ceramic layer health, and book appointments in 2 clicks.</p>
+        </div>
+
+        <div class="garage-card">
+          <div class="garage-card-content">
+            <div class="garage-card-top">
+              <div class="vehicle-info">
+                <span class="vehicle-year">2024</span>
+                <h3 class="vehicle-name">Porsche 911 GT3 (992)</h3>
+                <span class="vehicle-vin">VIN: WP0AC2A98NS29****</span>
+              </div>
+              <span class="badge-active">ACTIVE CARE</span>
+            </div>
+
+            <div class="garage-telemetry-grid">
+              <div class="telemetry-item">
+                <span class="tel-label">CERAMIC SHIELD HEALTH</span>
+                <span class="tel-val highlight">94%</span>
+                <span class="tel-sub">Coated Nov 2025 • Gyeon Infinite</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">RECOMMENDED SERVICE</span>
+                <span class="tel-val">Ceramic Boost Wash</span>
+                <span class="tel-sub">Due in 18 days</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="tel-label">TOTAL SESSIONS</span>
+                <span class="tel-val">6 Completed</span>
+                <span class="tel-sub">At REVORA Atelier Bandra</span>
+              </div>
+            </div>
+
+            <div class="garage-actions">
+              <button class="btn btn-primary">Schedule Priority Care</button>
+              <button class="btn btn-secondary">Add Another Vehicle +</button>
+            </div>
+          </div>
+
+          <div class="garage-card-media">
+            <img src="Assets/garage-porsche-gt3.jpg" alt="Porsche 911 GT3 (992) in REVORA Atelier Garage" class="garage-media-img" loading="lazy">
+            <div class="garage-media-overlay"></div>
+            <div class="garage-media-badge">
+              <span class="g-badge-title">DIGITAL TWIN TELEMETRY</span>
+              <span class="g-badge-sub">GYEON INFINITE BASE • 9.2H ACTIVE LAYER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 11. REVORA CARE MEMBERSHIP (SKELETON)                                    -->
+    <!-- ========================================================================= -->
+    <section class="section membership-section" id="membership">
+      <div class="section-container">
+        <div class="section-status-badge">
+          <span class="badge-dot"></span>
+          <span>SECTION 10 • SKELETON</span>
+        </div>
+        <div class="membership-card">
+          <div class="membership-info">
+            <span class="eyebrow-accent">MEMBERSHIP PRIVILEGES</span>
+            <h2 class="membership-title">REVORA Care Club.</h2>
+            <p class="membership-desc">Keep your vehicle perpetually immaculate with monthly automated maintenance, priority workshop slots, and exclusive member discounts.</p>
+            <div class="membership-price">
+              <span class="price-val">₹799</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <div class="membership-perks">
+              <span>• 1x Monthly Deionized Wash Included</span>
+              <span>• 20% Off Ceramic Top-Ups & PPF</span>
+              <span>• Complimentary Doorstep Pickup & Drop</span>
+              <span>• Emergency Spot Scratch Inspection</span>
+            </div>
+          </div>
+          <div class="membership-visual-box">
+            <div class="membership-media-wrapper">
+              <img src="Assets/membership-care-club.jpg" alt="REVORA Care Club VIP Black Member Card" class="membership-media-img" loading="lazy">
+              <div class="membership-media-overlay"></div>
+              <div class="membership-media-badge">
+                <span class="mem-badge-tier">BLACK TIER // FOUNDING PASS</span>
+                <span class="mem-badge-perk">PRIORITY ACCESS • DOORSTEP CONCIERGE</span>
+              </div>
+            </div>
+            <div class="membership-cta-action">
+              <button class="btn btn-primary btn-lg btn-block">Join REVORA Care</button>
+              <span class="cancel-note">Cancel or pause anytime. No long-term lock-in.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 12. HOW IT WORKS (SKELETON)                                              -->
+    <!-- ========================================================================= -->
+    <section class="section how-it-works-section" id="how-it-works">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 11 • SKELETON</span>
+          </div>
+          <h2 class="section-title">How REVORA Works.</h2>
+          <p class="section-subtitle">Automotive car care orchestrated with digital simplicity.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-badge">STEP 01</div>
+            <h4 class="step-heading">Select Vehicle & Service</h4>
+            <p class="step-text">Choose your exact make and model, then select your required treatment or tailored package.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">STEP 02</div>
+            <h4 class="step-heading">Choose Atelier or Doorstep</h4>
+            <p class="step-text">Opt for an authorized cleanroom studio or request our fully self-sufficient mobile detailing van.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">STEP 03</div>
+            <h4 class="step-heading">Precision Execution</h4>
+            <p class="step-text">Watch live photo updates as certified technicians restore every surface with surgical precision.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-badge">STEP 04</div>
+            <h4 class="step-heading">Drive Refined</h4>
+            <p class="step-text">Take delivery of your vehicle with verified digital inspection report and warranty certificate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 13. TESTIMONIALS & TRUST BADGES (SKELETON)                               -->
+    <!-- ========================================================================= -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="section-status-badge">
+            <span class="badge-dot"></span>
+            <span>SECTION 12 • SKELETON</span>
+          </div>
+          <h2 class="section-title">Trusted by Serious Drivers.</h2>
+          <p class="section-subtitle">Real experiences from sports car collectors and daily commuter perfectionists.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">"The ceramic coating job on my GT3 is unbelievable. The depth of the metallic flake looks deeper than the day it was delivered from Stuttgart. REVORA is in a league of their own."</p>
+            <div class="test-author">
+              <span class="author-name">Vikramaditya S.</span>
+              <span class="author-car">Porsche 911 GT3 Owner</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">"Mobile detailing arrived at my office right on schedule. No noise, no mess, no stress. My BMW M3 looked immaculate before my evening client dinner. Game changer."</p>
+            <div class="test-author">
+              <span class="author-name">Ananya Mehta</span>
+              <span class="author-car">BMW M3 Competition Owner</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="test-stars">★★★★★</div>
+            <p class="test-quote">"Transparent pricing, no pushy upsells, and the paint inspection report with thickness readings gave me absolute confidence. Best car care platform in India."</p>
+            <div class="test-author">
+              <span class="author-name">Rohan Singhania</span>
+              <span class="author-car">Mercedes-AMG G63 Owner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 14. FINAL BOOKING CTA (SKELETON)                                         -->
+    <!-- ========================================================================= -->
+    <section class="section final-cta-section" id="final-cta">
+      <div class="section-container">
+        <div class="section-status-badge">
+          <span class="badge-dot"></span>
+          <span>SECTION 13 • SKELETON</span>
+        </div>
+        <div class="final-cta-card">
+          <span class="eyebrow-accent">RESERVE YOUR APPOINTMENT</span>
+          <h2 class="cta-banner-title">Experience Automotive Perfection.</h2>
+          <p class="cta-banner-desc">Slots are strictly capped daily across ateliers to guarantee uncompromising attention to detail.</p>
+          <div class="cta-btn-group">
+            <a href="#booking-search" class="btn btn-primary btn-lg">Book Service Online</a>
+            <a href="https://wa.me/" target="_blank" class="btn btn-secondary btn-lg">WhatsApp Concierge</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- CREATOR ATTRIBUTION RIBBON                                               -->
+  <!-- ========================================================================= -->
+  <div class="creator-ribbon" id="creator-ribbon">
+    <div class="creator-ribbon-badge">
+      <span class="creator-ribbon-dot"></span>
+      <span class="creator-ribbon-text">Designed with <svg viewBox="0 0 24 24" width="13" height="13" fill="#FFFFFF" class="white-heart-icon" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Abinash</span>
+      <span class="creator-ribbon-dot"></span>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 15. COMPREHENSIVE FOOTER                                                 -->
+  <!-- ========================================================================= -->
+  <footer class="footer-wrapper" id="footer">
+    <div class="section-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <span class="brand-name">REVORA</span>
+          <p class="footer-desc">The modern operating system for luxury car care. Precision detailing, mechanical maintenance, and ceramic protection.</p>
+          <div class="footer-nap">
+            <p><strong>Revora HQ:</strong> Linking Road, Bandra West, Mumbai, MH 400050</p>
+            <p><strong>Concierge:</strong> +91 (022) 5550-7386 • support@revora.care</p>
+            <p><strong>Operating Hours:</strong> Mon - Sun: 08:00 AM - 08:00 PM IST</p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-title">Services</h5>
+          <ul>
+            <li><a href="#services">Ceramic Coating</a></li>
+            <li><a href="#services">Paint Protection Film</a></li>
+            <li><a href="#services">Paint Correction</a></li>
+            <li><a href="#services">Periodic Maintenance</a></li>
+            <li><a href="#services">Interior Sanitization</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-title">Platform</h5>
+          <ul>
+            <li><a href="#packages">Service Packages</a></li>
+            <li><a href="#service-centers">Ateliers Directory</a></li>
+            <li><a href="#mobile-detailing">Mobile Detailing</a></li>
+            <li><a href="#my-garage">My Garage Portal</a></li>
+            <li><a href="#membership">REVORA Care Club</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-title">Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Certified Detailers Network</a></li>
+            <li><a href="#">Partner With Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 REVORA Technologies Inc. All rights reserved. Crafted for automotive enthusiasts.</p>
+        <div class="footer-tags">
+          <span>Gyeon Certified</span>
+          <span>•</span>
+          <span>3M Authorized</span>
+          <span>•</span>
+          <span>ISO 9001 Detailing Protocol</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

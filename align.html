@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Revora Alignment Calibrator</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #controls {
+      padding: 12px 20px;
+      background: #1f1f1f;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid #333;
+    }
+    .ctrl-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    input[type="range"] {
+      width: 140px;
+    }
+    #stage {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+    .layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .img-base {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .img-reveal {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      transform-origin: center center;
+    }
+    #codeOutput {
+      font-family: monospace;
+      font-size: 12px;
+      color: #c8f31d;
+      background: #000;
+      padding: 6px 12px;
+      border-radius: 4px;
+      user-select: all;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <div class="ctrl-group">
+      <label>Mode:</label>
+      <select id="modeSelect">
+        <option value="spotlight">Spotlight Reveal</option>
+        <option value="difference">Difference Blend (Alignment)</option>
+        <option value="opacity50">50% Onion Skin</option>
+        <option value="split">Split Screen</option>
+      </select>
+    </div>
+    <div class="ctrl-group">
+      <label>Scale:</label>
+      <input type="range" id="scaleInput" min="0.5" max="2.5" step="0.005" value="1.439">
+      <span id="scaleVal">1.439</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Translate X (%):</label>
+      <input type="range" id="xInput" min="-50" max="50" step="0.1" value="-8.5">
+      <span id="xVal">-8.5%</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Translate Y (%):</label>
+      <input type="range" id="yInput" min="-50" max="50" step="0.1" value="2.5">
+      <span id="yVal">2.5%</span>
+    </div>
+    <div class="ctrl-group">
+      <label>Rotate (deg):</label>
+      <input type="range" id="rotInput" min="-10" max="10" step="0.05" value="0">
+      <span id="rotVal">0°</span>
+    </div>
+    <div id="codeOutput">transform: scale(1.439) translate(-8.5%, 2.5%);</div>
+  </div>
+
+  <div id="stage">
+    <div class="layer" id="baseLayer">
+      <img src="Base-image.gif" class="img-base" id="baseImg">
+    </div>
+    <div class="layer" id="revealLayer">
+      <img src="Reaveal-image 2.png" class="img-reveal" id="revealImg">
+    </div>
+  </div>
+
+  <script>
+    const revealImg = document.getElementById('revealImg');
+    const revealLayer = document.getElementById('revealLayer');
+    const scaleInput = document.getElementById('scaleInput');
+    const xInput = document.getElementById('xInput');
+    const yInput = document.getElementById('yInput');
+    const rotInput = document.getElementById('rotInput');
+    const modeSelect = document.getElementById('modeSelect');
+    const codeOutput = document.getElementById('codeOutput');
+    const stage = document.getElementById('stage');
+
+    function update() {
+      const s = parseFloat(scaleInput.value);
+      const x = parseFloat(xInput.value);
+      const y = parseFloat(yInput.value);
+      const r = parseFloat(rotInput.value);
+
+      document.getElementById('scaleVal').textContent = s.toFixed(3);
+      document.getElementById('xVal').textContent = x.toFixed(1) + '%';
+      document.getElementById('yVal').textContent = y.toFixed(1) + '%';
+      document.getElementById('rotVal').textContent = r.toFixed(2) + '°';
+
+      revealImg.style.transform = `scale(${s}) translate(${x}%, ${y}%) rotate(${r}deg)`;
+      codeOutput.textContent = `transform: scale(${s.toFixed(3)}) translate(${x.toFixed(1)}%, ${y.toFixed(1)}%) rotate(${r.toFixed(2)}deg);`;
+
+      const mode = modeSelect.value;
+      if (mode === 'difference') {
+        revealLayer.style.mixBlendMode = 'difference';
+        revealLayer.style.opacity = '1';
+        revealLayer.style.maskImage = 'none';
+        revealLayer.style.webkitMaskImage = 'none';
+      } else if (mode === 'opacity50') {
+        revealLayer.style.mixBlendMode = 'normal';
+        revealLayer.style.opacity = '0.5';
+        revealLayer.style.maskImage = 'none';
+        revealLayer.style.webkitMaskImage = 'none';
+      } else if (mode === 'spotlight') {
+        revealLayer.style.mixBlendMode = 'normal';
+        revealLayer.style.opacity = '1';
+        revealLayer.style.maskImage = 'radial-gradient(circle 260px at var(--mx, 50%) var(--my, 50%), black 0%, black 170px, transparent 260px)';
+        revealLayer.style.webkitMaskImage = 'radial-gradient(circle 260px at var(--mx, 50%) var(--my, 50%), black 0%, black 170px, transparent 260px)';
+      }
+    }
+
+    scaleInput.addEventListener('input', update);
+    xInput.addEventListener('input', update);
+    yInput.addEventListener('input', update);
+    rotInput.addEventListener('input', update);
+    modeSelect.addEventListener('change', update);
+
+    stage.addEventListener('pointermove', (e) => {
+      const rect = stage.getBoundingClientRect();
+      const px = e.clientX - rect.left;
+      const py = e.clientY - rect.top;
+      revealLayer.style.setProperty('--mx', px + 'px');
+      revealLayer.style.setProperty('--my', py + 'px');
+    });
+
+    update();
+  </script>
+</body>
+</html>
